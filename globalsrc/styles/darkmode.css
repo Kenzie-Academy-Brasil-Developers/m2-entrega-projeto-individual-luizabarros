@@ -1,0 +1,22 @@
+.darkmode {
+    min-width: 50px;
+    padding: .5rem;
+    height: 30px;
+    border-radius: 4px;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+}
+
+.circle {
+    position: absolute;
+    right: 4px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s;
+}

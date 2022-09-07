@@ -20,8 +20,8 @@ export class Homepage {
         const header      = await MainHeader.mainHeader()[0]
         const container   = await MainHeader.mainHeader()[1]
         const navbar      = await MainHeader.mainHeader()[2]
-        const divDarkmode = await DarkMode.darkmodeElements()
-
+        const divDarkmode = await DarkMode.darkmodeElements()      
+          
         const select            = document.createElement('select')
         const mainOption        = document.createElement('option')
         mainOption.innerText = 'Setores'
@@ -50,10 +50,10 @@ export class Homepage {
         
         if (window.location.pathname == '/index.html') {
             img.src    = './homepage/globalsrc/assets/company.png'
-            form       = await Login.loginElements(form, 'login')
+            form       = await Login.loginElements(form)
         } else {
             img.src    = '../globalsrc/assets/company.png'
-            form       = await SignUp.signupElements(form, 'signin')
+            form       = await SignUp.signupElements(form)
         }
         img.alt = 'Pessoas trabalhando em uma empresa'
         main.classList.add('access')
@@ -66,34 +66,28 @@ export class Homepage {
         return main
     }
 
-    static async forms(innerTexts, allInputs, whichForm) {
+    static async forms(innerTexts, allInputs) {
         const fillInWrapper = document.createElement('div')
         const btnSignHeader = document.createElement('button')
         const signUpWrapper = document.createElement('div')
         const span          = document.createElement('span')
         const btnSignBody   = document.createElement('button')
-        const redirect      = document.createElement('a')
+
+        fillInWrapper.classList.add('access__fillinHeader')
+        signUpWrapper.classList.add('access__fillinFooter')
 
         btnSignHeader.innerText = innerTexts[0]
         span.innerText          = innerTexts[1]
-        redirect.innerText      = innerTexts[2]
-
-        if (whichForm == 'login') {
-            redirect.href           = './homepage/signup/signup.html'
-        } else {
-            redirect.href           = '../../index.html'
-        }
+        btnSignBody.innerText   = innerTexts[2]
 
         allInputs.forEach(element => {
             const input          = document.createElement('input')
             input.type           = Object.values(element)[0][0]
             input.placeholder    = Object.values(element)[0][1]
-            input.required       = true
             fillInWrapper.append(input)
         })
 
         fillInWrapper.append(btnSignHeader)
-        btnSignBody.append(redirect)
         signUpWrapper.append(span, btnSignBody)
 
         return [fillInWrapper, signUpWrapper]

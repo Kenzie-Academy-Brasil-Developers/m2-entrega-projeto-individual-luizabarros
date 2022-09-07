@@ -1,0 +1,26 @@
+:root {
+    --primary: #ff7900; 
+    --primary-light: #ff9d00;
+    --primary-dark: #ff6d00;
+    --color1: #fefae0; 
+    --color2: #000000;
+    --color3: #fff;
+    --color4: #343a40;
+    --wrong: #f94144;
+    --correct: #43aa8b;
+    --shadow: #00000011;
+    --border: 1px solid var(--primary);
+    --font-family: 'Poppins', sans-serif;
+    --title1: normal 700 2.8rem/40px var(--font-family);
+    --title2: normal 600 2rem/24px var(--font-family);
+    --text1: normal 400 1.6rem/28px var(--font-family);
+    --text2: normal 400 1.4rem/16px var(--font-family);
+    --text3: normal 400 1.2rem/16px var(--font-family);
+}
+
+.darkmodeActive:root {
+    --primary: #9d4edd;
+    --primary-light: #240046;
+    --color1: #240046; 
+    --color2: #fefae0;
+}

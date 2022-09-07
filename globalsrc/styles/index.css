@@ -1,0 +1,32 @@
+.inactive, .menu__navbar, .darkmode {
+    display: none;
+}
+
+.container {
+    max-width: 1200px;
+    min-height: 85px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.menu .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu__overview__icons {
+    font-size: 3.2rem;
+}
+
+.companies {
+    padding: 1.5rem;
+}
+
+.companies ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}

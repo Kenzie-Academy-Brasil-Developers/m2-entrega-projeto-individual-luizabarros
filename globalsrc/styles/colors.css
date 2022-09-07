@@ -1,0 +1,39 @@
+.menu, .companies {
+    background: var(--primary-light);
+    color: var(--color2);
+}
+
+.menu {
+    border-bottom: var(--border);
+}
+
+.menu__navbar select {
+    border-radius: 4px;
+    border: var(--border);
+}
+
+.darkmode, form {
+    background: var(--primary);
+    box-shadow: 5px 5px 15px var(--shadow);
+}
+
+.circle, button {
+    background: var(--color2);
+}
+
+body, select {
+    background: var(--color1);
+    color: var(--color2)
+}
+
+input {
+    background: var(--color3);
+}
+
+button {
+    color: var(--color1);
+}
+
+footer.companies {
+    border-top: var(--border);
+}

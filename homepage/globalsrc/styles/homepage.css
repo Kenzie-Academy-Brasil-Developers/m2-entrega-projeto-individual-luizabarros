@@ -1,0 +1,13 @@
+.access .container {
+    padding: 5rem 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 30px;
+    text-align: center;
+}
+
+.access img {
+    max-width: 100%;
+}

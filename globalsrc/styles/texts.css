@@ -1,0 +1,15 @@
+h1 {
+    font: var(--title1);
+}
+
+select, input, button {
+    font: var(--text1);
+}
+
+span, li {
+    font: var(--text2);
+}
+
+h2 {
+    font: var(--title2)
+}

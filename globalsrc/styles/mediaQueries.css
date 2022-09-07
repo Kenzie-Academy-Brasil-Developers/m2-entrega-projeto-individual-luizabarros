@@ -1,0 +1,9 @@
+@media (min-width: 600px) {
+    .menu__overview__icons {
+        display: none;
+    }
+
+    .menu__navbar, .darkmode {
+        display: flex;
+    }
+}
