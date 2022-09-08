@@ -28,7 +28,22 @@ export class MainHeader {
 
         iconsWrapper.append(iconOpen, iconClose)
         container.append(title, iconsWrapper)
+
+        this.menuMobile(iconOpen, iconClose)
         
         return [header, container, navbar]
+    }
+
+    static async menuMobile(...iconsBtn) {
+        for (let index = 0; index < iconsBtn.length; index++) {
+            iconsBtn[index].addEventListener('click', () => {
+                let elements = ['.fa-bars', '.fa-close', '.menu__navbar', '.darkmode']
+                elements.forEach(element => {
+                    console.log(element)
+                    document.querySelector(element).classList.toggle('inactive')
+                    document.querySelector(element).classList.toggle('active')
+                })
+            })
+        }
     }
 }

@@ -6,7 +6,7 @@ select, input, button {
     font: var(--text1);
 }
 
-span, li {
+span, li, p {
     font: var(--text2);
 }
 

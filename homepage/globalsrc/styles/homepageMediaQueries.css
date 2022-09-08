@@ -8,10 +8,10 @@
         justify-content: space-evenly;
     }
 
-    .access .container div:nth-of-type(1) {
+    .access .container div:nth-of-type(1), .cards {
         width: 60%;
     }
-    
+
     .access .container div:nth-of-type(2) {
         width: 60%;
     }

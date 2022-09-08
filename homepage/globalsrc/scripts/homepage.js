@@ -1,5 +1,6 @@
 import { HomepageRequests } from "./homepageRequests.js"
 import { MainHeader } from "../../../globalsrc/scripts/header.js"
+import { Filter } from "./filterBySection.js"
 import { DarkMode } from "../../../globalsrc/scripts/darkMode.js"
 import { Login } from "../../login/scripts/login.js"
 import { SignUp } from "../../signup/scripts/signup.js"
@@ -29,11 +30,12 @@ export class Homepage {
         select.append(mainOption)
         sectors.forEach(({description}) => {
             const option     = document.createElement('option')
-            option.value     = description.toLowerCase()
+            option.value     = description
             option.innerText = description
             select.append(option)
         })
-
+        Filter.companiesFromSection(select)
+    
         navbar.append(select)
         container.append(navbar, divDarkmode)
         header.append(container)
@@ -50,10 +52,10 @@ export class Homepage {
         
         if (window.location.pathname == '/index.html') {
             img.src    = './homepage/globalsrc/assets/company.png'
-            form       = await Login.loginElements(form)
+            form       = await Login.loginElements(form, 'login')
         } else {
             img.src    = '../globalsrc/assets/company.png'
-            form       = await SignUp.signupElements(form)
+            form       = await SignUp.signupElements(form, 'signup')
         }
         img.alt = 'Pessoas trabalhando em uma empresa'
         main.classList.add('access')
@@ -66,7 +68,7 @@ export class Homepage {
         return main
     }
 
-    static async forms(innerTexts, allInputs) {
+    static async forms(innerTexts, allInputs, whichForm) {
         const fillInWrapper = document.createElement('div')
         const btnSignHeader = document.createElement('button')
         const signUpWrapper = document.createElement('div')
@@ -86,6 +88,14 @@ export class Homepage {
             input.placeholder    = Object.values(element)[0][1]
             fillInWrapper.append(input)
         })
+
+        if (whichForm == 'login') {
+            Login.signin(btnSignHeader)
+            Login.handleBtnFooter(btnSignBody)
+        } else {
+            SignUp.signup(btnSignHeader)
+            SignUp.handleBtnFooter(btnSignBody)
+        }
 
         fillInWrapper.append(btnSignHeader)
         signUpWrapper.append(span, btnSignBody)

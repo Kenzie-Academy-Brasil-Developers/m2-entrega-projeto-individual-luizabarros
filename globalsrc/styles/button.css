@@ -1,7 +1,7 @@
 button {
     border-radius: 4px;
     height: 40px;
-    min-width: 90%;
+    min-width: max-content;
     padding: .5rem 1rem;
     cursor: pointer;
     transition: all 0.3s ease;

@@ -13,17 +13,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu__navbar.active, .darkmode.active {
+    display: flex;
 }
 
 .menu__overview__icons {
     font-size: 3.2rem;
+    text-align: right;
+    width: 50%;
 }
 
 .companies {
     padding: 1.5rem;
 }
 
-.companies ul {
+.companies .container, .companies ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
