@@ -5,19 +5,16 @@ import { DarkMode } from "../../../globalsrc/scripts/darkMode.js"
 import { Login } from "../../login/scripts/login.js"
 import { SignUp } from "../../signup/scripts/signup.js"
 import { MainFooter } from "../../../globalsrc/scripts/footer.js"
+import { Requests } from "../../../globalsrc/scripts/requests.js"
+import { Body } from "../../../globalsrc/scripts/body.js"
 
 export class Homepage {
-    static async body() {
-        const body   = document.querySelector('body')
-        const header = await this.header()
-        const main   = await this.main()
-        const footer = await MainFooter.footer()
-        
-        body.append(header, main, footer)
+    static async homepageBody() {
+        Body.body(await this.header(), await this.main(), await MainFooter.footer())
     }
 
     static async header() {
-        const sectors     = await HomepageRequests.getSectors()
+        const sectors     = await Requests.getSectors()
         const header      = await MainHeader.mainHeader()[0]
         const container   = await MainHeader.mainHeader()[1]
         const navbar      = await MainHeader.mainHeader()[2]
@@ -103,4 +100,4 @@ export class Homepage {
         return [fillInWrapper, signUpWrapper]
     }
 }
-Homepage.body()
+Homepage.homepageBody()

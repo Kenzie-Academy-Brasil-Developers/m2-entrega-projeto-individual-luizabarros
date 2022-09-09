@@ -6,21 +6,6 @@ export class HomepageRequests {
         Authorization: `Bearer ${this.tokenAdm}`
     }
 
-    static async getSectors() {
-        const sectors = await fetch(`${this.baseUrl}sectors`, {
-            method: 'GET',
-            headers: this.header
-        })
-        .then(data => data.json())
-        return sectors
-    }
-
-    static async getCompaniesFromSector(sector) {
-        const companies = await fetch(`${this.baseUrl}companies/${sector}`)
-        .then(data => data.json())
-        return companies
-    }
-
     static async login(body) {
         const userLogin = await fetch(`${this.baseUrl}auth/login`, {
             method: 'POST',

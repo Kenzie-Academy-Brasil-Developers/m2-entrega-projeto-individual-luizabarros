@@ -1,13 +1,12 @@
 import { HomepageRequests } from "./homepageRequests.js"
 import { Cards } from "../../../globalsrc/scripts/cards.js"
+import { Requests } from "../../../globalsrc/scripts/requests.js"
 
 export class Filter {
     static async companiesFromSection(select) {
         const allCards  = document.createElement('section')
         const h2        = document.createElement('h2')
         allCards.classList.add('cards')
-        allCards.classList.add('animate__bounceIn')
-        h2.classList.add('animate__bounceIn')
         
         select.addEventListener('click', async () => {
 
@@ -15,7 +14,7 @@ export class Filter {
             const main      = document.querySelector('.access')
             const container = main.childNodes[0]
             
-            const companies = await HomepageRequests.getCompaniesFromSector(select.value)
+            const companies = await Requests.getCompaniesFromSector(select.value)
 
             await this.checkDisplay(select.value, img, allCards, h2)
             await this.insert(companies, select.value, allCards, container, h2)
@@ -39,7 +38,7 @@ export class Filter {
     static async insert(companies, value, allCards, container, h2) {
         if (companies.length != 0 && value != 'Setores') {
             companies.forEach(async (company) => {
-                let card = await Cards.card(company)
+                let card = await Cards.card(company, 'company')
                 
                 allCards.append(card)
                 container.insertAdjacentElement('afterbegin', allCards)

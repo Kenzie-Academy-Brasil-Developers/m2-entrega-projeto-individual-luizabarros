@@ -9,6 +9,7 @@
     --wrong: #f94144;
     --correct: #43aa8b;
     --shadow: #00000011;
+    --grey-opacity-1: #21252980;
     --border: 1px solid var(--primary);
     --font-family: 'Poppins', sans-serif;
     --title1: normal 700 2.8rem/40px var(--font-family);

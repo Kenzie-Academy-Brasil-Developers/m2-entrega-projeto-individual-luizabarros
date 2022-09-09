@@ -21,6 +21,11 @@
     background: var(--color2);
 }
 
+.card, .card ul {
+    border: 1px solid var(--color4);
+    box-shadow: 5px 5px 15px var(--shadow);
+}
+
 body, select {
     background: var(--color1);
     color: var(--color2)

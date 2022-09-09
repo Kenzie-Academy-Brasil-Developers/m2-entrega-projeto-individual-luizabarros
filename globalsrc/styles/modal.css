@@ -1,0 +1,57 @@
+.modalWrapper {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--grey-opacity-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.modal {
+    position: fixed;
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 2rem;
+    border-radius: 4px;
+    animation: appear 1s ease-in-out;
+}
+
+.modal .closeBtn::before {
+    position: absolute;
+    content: '\00d7';
+    font-size: 3rem;
+    right: 2%;
+    cursor: pointer;
+}
+
+.modal .fillInWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal input, .modal button {
+    padding: .5rem;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.modal button {
+    cursor: pointer;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    } 100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

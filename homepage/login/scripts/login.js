@@ -1,6 +1,6 @@
-import { HomepageRequests } from "../../globalsrc/scripts/homepageRequests.js"
-import { Homepage } from "../../globalsrc/scripts/homepage.js"
-import { Toast } from "../../globalsrc/scripts/toast.js"
+import { HomepageRequests } from '../../globalsrc/scripts/homepageRequests.js'
+import { Homepage } from '../../globalsrc/scripts/homepage.js'
+import { Toast } from '../../../globalsrc/scripts/toast.js'
 
 export class Login {
     static async loginElements(form, whichForm) {

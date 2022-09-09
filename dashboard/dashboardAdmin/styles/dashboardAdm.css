@@ -1,0 +1,47 @@
+.menu .container {
+    justify-content: center;
+    gap: 15px;
+}
+
+.menu ul {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.menu ul li {
+    cursor: pointer;
+}
+
+.menu ul li:hover {
+    text-decoration: underline;
+}
+
+.showResults .container {
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+
+.options li {
+    padding-bottom: 1rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.options li:hover {
+    text-decoration: underline;
+}
