@@ -6,4 +6,8 @@
     .menu__navbar, .darkmode {
         display: flex;
     }
+
+    .companies ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

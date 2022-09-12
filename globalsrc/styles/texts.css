@@ -2,7 +2,7 @@ h1 {
     font: var(--title1);
 }
 
-select, input, button {
+select, input, button, h3 {
     font: var(--text1);
 }
 

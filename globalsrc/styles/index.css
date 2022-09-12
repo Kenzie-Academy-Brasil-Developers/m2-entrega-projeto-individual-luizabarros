@@ -30,10 +30,17 @@
     padding: 1.5rem;
 }
 
-.companies .container, .companies ul {
+.companies .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px;
+}
+
+.companies ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
     gap: 10px;
 }

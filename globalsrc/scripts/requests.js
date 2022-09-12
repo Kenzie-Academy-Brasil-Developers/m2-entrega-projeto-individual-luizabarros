@@ -26,4 +26,14 @@ export class Requests {
         .then(data => data.json())
         return companies
     }
+
+    static async createCompany(company) {
+        const response = await fetch(`${this.baseUrl}companies`, {
+            method: 'POST',
+            headers: this.header,
+            body: JSON.stringify(company)
+        })
+        .then(data => data.json())
+        return response        
+    }
 }
