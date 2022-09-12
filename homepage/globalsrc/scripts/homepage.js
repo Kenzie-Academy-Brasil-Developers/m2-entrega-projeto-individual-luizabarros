@@ -1,16 +1,13 @@
-import { HomepageRequests } from "./homepageRequests.js"
 import { MainHeader } from "../../../globalsrc/scripts/header.js"
 import { Filter } from "./filterBySection.js"
 import { DarkMode } from "../../../globalsrc/scripts/darkMode.js"
 import { Login } from "../../login/scripts/login.js"
 import { SignUp } from "../../signup/scripts/signup.js"
-import { MainFooter } from "../../../globalsrc/scripts/footer.js"
 import { Requests } from "../../../globalsrc/scripts/requests.js"
-import { Body } from "../../../globalsrc/scripts/body.js"
 
 export class Homepage {
     static async header() {
-        const sectors     = await Requests.getSectors()
+        const sectors     = ['Alimenticio', 'Varejo', 'Textil', 'Manufatura', 'Aeroespacial', 'Automotiva', 'TI', 'Atacado']
         const header      = await MainHeader.mainHeader()[0]
         const container   = await MainHeader.mainHeader()[1]
         const navbar      = await MainHeader.mainHeader()[2]
@@ -21,10 +18,10 @@ export class Homepage {
         mainOption.innerText = 'Setores'
         
         select.append(mainOption)
-        sectors.forEach(({description}) => {
+        sectors.forEach((value) => {
             const option     = document.createElement('option')
-            option.value     = description
-            option.innerText = description
+            option.value     = value
+            option.innerText = value
             select.append(option)
         })
         Filter.companiesFromSection(select)

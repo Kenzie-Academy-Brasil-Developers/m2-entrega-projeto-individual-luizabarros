@@ -1,5 +1,6 @@
 .showResults {
     height: 500px;
+    overflow: hidden;
 }
 
 .modalWrapper {

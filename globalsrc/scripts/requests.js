@@ -9,10 +9,7 @@ export class Requests {
     static async getSectors() {
         const sectors = await fetch(`${this.baseUrl}sectors`, {
             method: 'GET',
-            headers: {
-                'Content-type': 'application/json',
-                Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiNjM2MjMzZGUtZDY2My00OGI4LWFiZmYtZmQzNzgxMTU5Mjg4IiwiaXNfYWRtaW4iOnRydWUsImlhdCI6MTY2MjE0NTk2MSwiZXhwIjoxNjYzMDA5OTYxLCJzdWIiOiJbb2JqZWN0IFVuZGVmaW5lZF0ifQ.e2l3VxvLDDD8yDDcfLAXGi6pY6_X9AinAhuk673tkXs`
-            }
+            headers: this.header
         })
         .then(data => data.json())
         return sectors

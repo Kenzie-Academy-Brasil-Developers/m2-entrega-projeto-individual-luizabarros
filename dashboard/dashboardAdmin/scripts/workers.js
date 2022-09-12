@@ -35,7 +35,7 @@ export class Workers {
         const allInputs = [
             {professionalLevel: ['text', 'Cargo']},
             {kindOfWork: ['text', 'Tipo de trabalho']},
-            {contractualSituation: ['text', 'Demitir ou contratar']}
+            {contractualSituation: ['text', 'Demitir']}
         ]
 
         const modal = await Modal.modalForms(allInputs, 'Editar dados')
