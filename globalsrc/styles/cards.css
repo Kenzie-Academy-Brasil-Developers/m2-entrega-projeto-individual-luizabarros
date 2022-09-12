@@ -5,6 +5,7 @@
     align-items: center;
     gap: 30px;
     overflow-y: scroll;
+    height: 300px;
 }
 
 .card {
