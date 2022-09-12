@@ -12,7 +12,7 @@ export class Cards {
             cardTitle.innerText       = info.name
             cardHour.innerText        = info.opening_hours
             cardDescription.innerText = info.description
-            cardSection.innerText     = info.sectors.description
+            cardSection.innerText     = info.sectors == undefined ? null : info.sectors.description
 
             if (extraType == 'departments' && extraInfo.length != 0) {
                 const carrosel = await this.departments(extraInfo)                                

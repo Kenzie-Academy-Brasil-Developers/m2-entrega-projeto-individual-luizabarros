@@ -20,6 +20,11 @@
     display: flex;
 }
 
+.menu__navbar h3:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .menu__overview__icons {
     font-size: 3.2rem;
     text-align: right;

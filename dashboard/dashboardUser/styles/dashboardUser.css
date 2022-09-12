@@ -1,0 +1,14 @@
+.cards {
+    height: 500px;
+    text-align: center;
+}
+
+.navigate {
+    display: flex;
+    gap: 10px;
+}
+
+.navigate li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
