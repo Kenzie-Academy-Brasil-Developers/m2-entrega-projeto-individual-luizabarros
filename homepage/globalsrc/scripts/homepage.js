@@ -9,10 +9,6 @@ import { Requests } from "../../../globalsrc/scripts/requests.js"
 import { Body } from "../../../globalsrc/scripts/body.js"
 
 export class Homepage {
-    static async homepageBody() {
-        Body.body(await this.header(), await this.main(), await MainFooter.footer())
-    }
-
     static async header() {
         const sectors     = await Requests.getSectors()
         const header      = await MainHeader.mainHeader()[0]
@@ -38,31 +34,6 @@ export class Homepage {
         header.append(container)
         
         return header
-    }
-
-    static async main() {
-        const main          = document.createElement('main')
-        const container     = document.createElement('div')            
-        const divIMGWrapper = document.createElement('div')
-        const img           = document.createElement('img')
-        let form            = document.createElement('form')
-        
-        if (window.location.pathname == '/index.html') {
-            img.src    = './homepage/globalsrc/assets/company.png'
-            form       = await Login.loginElements(form, 'login')
-        } else {
-            img.src    = '../globalsrc/assets/company.png'
-            form       = await SignUp.signupElements(form, 'signup')
-        }
-        img.alt = 'Pessoas trabalhando em uma empresa'
-        main.classList.add('access')
-        container.classList.add('container')
-
-        divIMGWrapper.append(img)
-        container.append(divIMGWrapper, form)
-        main.append(container)
-
-        return main
     }
 
     static async forms(innerTexts, allInputs, whichForm) {
@@ -100,4 +71,3 @@ export class Homepage {
         return [fillInWrapper, signUpWrapper]
     }
 }
-Homepage.homepageBody()

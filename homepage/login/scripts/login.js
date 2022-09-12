@@ -1,8 +1,14 @@
 import { HomepageRequests } from '../../globalsrc/scripts/homepageRequests.js'
 import { Homepage } from '../../globalsrc/scripts/homepage.js'
 import { Toast } from '../../../globalsrc/scripts/toast.js'
+import { MainFooter } from '../../../globalsrc/scripts/footer.js'
+import { Body } from '../../../globalsrc/scripts/body.js'
 
 export class Login {
+    static async homepageBody() {
+        Body.body(await Homepage.header(), await Login.main(), await MainFooter.footer())
+    }
+
     static async loginElements(form, whichForm) {
         const title = document.createElement('h2')
 
@@ -19,6 +25,26 @@ export class Login {
 
         form.append(title, fillInWrapper, signUpWrapper)
         return form
+    }
+
+    static async main() {
+        const main          = document.createElement('main')
+        const container     = document.createElement('div')            
+        const divIMGWrapper = document.createElement('div')
+        const img           = document.createElement('img')
+        let form            = document.createElement('form')
+        
+        img.src    = './homepage/globalsrc/assets/company.png'
+        form       = await this.loginElements(form, 'login')
+        img.alt = 'Pessoas trabalhando em uma empresa'
+        main.classList.add('access')
+        container.classList.add('container')
+
+        divIMGWrapper.append(img)
+        container.append(divIMGWrapper, form)
+        main.append(container)
+
+        return main
     }
 
     static async signin(btnSignHeader) {
@@ -69,3 +95,4 @@ export class Login {
         })
     }
 }
+Login.homepageBody()
