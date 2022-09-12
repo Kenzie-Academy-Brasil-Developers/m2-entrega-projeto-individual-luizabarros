@@ -27,7 +27,6 @@ class DashboardUser {
             ul.append(li)
 
             item == 'Editar dados' ? li.classList.add('bold') : undefined
-            ul.addEventListener('click', (event) => this.bold(event, item, li, index))
         })
 
         ul.addEventListener('click', (event) => {
