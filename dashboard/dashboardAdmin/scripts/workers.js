@@ -16,7 +16,6 @@ export class Workers {
                     let cardWrapper = await Cards.card(user, 'worker')
                     allCards.append(cardWrapper)
                 }
-
             })
         })
         this.handleEdit()

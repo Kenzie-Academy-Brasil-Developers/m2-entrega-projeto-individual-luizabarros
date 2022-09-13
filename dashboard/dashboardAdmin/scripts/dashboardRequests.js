@@ -82,4 +82,13 @@ export class DashboardRequests {
             headers: this.header
         })        
     }
+
+    static async hire(body) {
+        const user = await fetch(`${this.baseUrl}departments/hire`, {
+            method: 'PATCH',
+            headers: this.header,
+            body: JSON.stringify(body)
+        })        
+        return user
+    }
 }

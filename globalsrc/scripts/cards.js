@@ -29,13 +29,16 @@ export class Cards {
             const cardEmail    = document.createElement('p')
             const cardLevel    = document.createElement('span')
             const cardWork     = document.createElement('span')
-
+            const cardTitle    = document.createElement('h3')
+            
             cardUsername.innerText = info.username
             cardEmail.innerText    = info.email
             cardLevel.innerText    = info.professional_level
             cardWork.innerText     = info.kind_of_work
+            cardTitle.innerText    = 'Contratar'
+            cardTitle.classList.add('hire')
                 
-            cardWrapper.append(cardUsername, cardEmail, cardLevel, cardWork)
+            cardWrapper.append(cardUsername, cardEmail, cardLevel, cardWork, cardTitle)
         } else if (type == 'department') {
             const carrosel            = await this.departments(info)                                
             cardWrapper.append(carrosel)

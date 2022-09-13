@@ -206,12 +206,47 @@ export class Departments {
 
     static async accessUnemployed(allCards) {
         const unemployed = await DashboardRequests.getUnemployed()
-
+        
         unemployed.forEach(async (person) => {
             let cardWrapper = await Cards.card(person, 'person')
             allCards.append(cardWrapper)
         })
+        
         ShowCards.showCards(allCards, 'Usuários sem departamento')
+        
+        allCards.addEventListener('click', (event) => this.hire(event))
+    }
+
+    static async hire(event) {
+        if (event.target.innerText == 'Contratar') {
+            const allInputs = [
+                {searchName: ['search', 'Nome do funcionário']},
+                {searchDepartment: ['search', 'Nome do departamento']},
+            ]
+    
+            Companies.form(allInputs, 'Pesquisar', event.target)
+        }
+    }
+
+    static async getInfoToHire(inputs, allCards) {
+        const worker     = inputs[0].value.trim()
+        const department = inputs[1].value.trim()
+
+        const unemployed  = await DashboardRequests.getUnemployed()
+        const departments = await DashboardRequests.getDepartments()
+
+        await unemployed.forEach(async (user) => {
+            await departments.forEach(async (element) => {
+                if (element.name == department && user.username == worker) {
+                    const body = {
+                        user_uuid: user.uuid,
+                        department_uuid: element.uuid
+                    }
+                    await DashboardRequests.hire(body)
+                }
+            })
+        })
+        alert('É necessário atualizar a página para que as alterações façam efeito.')
     }
 
     static async accessWorkers(allCards, target) {

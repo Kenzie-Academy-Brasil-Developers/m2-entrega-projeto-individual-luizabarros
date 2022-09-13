@@ -61,6 +61,8 @@ export class Modal {
                     ? await Departments.delete(inputs[0], allCards)
                     : target.innerText.includes('Editar')
                     ? await Departments.edit(inputs[0], allCards)
+                    : target.innerText.includes('Contratar')
+                    ? await Departments.getInfoToHire(inputs, allCards)
                     : await Workers.manageWorkers(inputs, allCards)
                 } else if (inputs[0].type == 'text') {
                     target.innerText == 'Adicionar nova empresa' ? await Companies.handleAdd(inputs) : await Departments.handleAdd(inputs)
